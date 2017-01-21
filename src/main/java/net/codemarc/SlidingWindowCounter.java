@@ -1,9 +1,6 @@
 package net.codemarc;
 
-import org.json.JSONArray;
 import org.json.JSONObject;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import restx.annotations.GET;
 import restx.annotations.RestxResource;
@@ -14,64 +11,45 @@ import restx.security.PermitAll;
 @RestxResource
 public class SlidingWindowCounter {
 
-	public static final Logger logger = LoggerFactory.getLogger("swc");
-	public static final String version="/v1";
-	private static SlidingWindowCounter singleton = null;
-
-	private SlidingWindowCounter() {
+	public SlidingWindowCounter() {
+		// Initialize and startup the sliders
+		SWC.getInstance();
 	}
 
-	public static SlidingWindowCounter getInstance() {
-		if (singleton != null) {
-			return singleton;
-		}
-
-		return open();
-	}
-
-	private synchronized static SlidingWindowCounter open() {
-		if (singleton != null)
-			return singleton;
-
-		singleton = new SlidingWindowCounter();
-
-		return singleton;
-	}
-
-    public JSONArray cause(Exception e) {
-		JSONObject jo = new JSONObject();
-		jo.put("error", e.getCause());
-		return new JSONArray().put(jo);
-		
-    }
     
-    private Long last(){
-    	return 0L;
-    }
-    
-
-	@GET(SlidingWindowCounter.version+"/increment")
+	@GET(SWC.version+"/increment")
 	@PermitAll 
 	public void increment() {
-		
+		SWC.inc();
 	}
 
-	@GET(SlidingWindowCounter.version+"/numLastSecond")
+	@GET(SWC.version+"/numLastSecond")
 	@PermitAll 
 	public Long numLastSecond() {
-		return last();
+		return SWC.getLastSec();
 	}
 
-	@GET(SlidingWindowCounter.version+"/numLastMinute")
+	@GET(SWC.version+"/numLastMinute")
 	@PermitAll 
 	public Long numLastMinute() {
-		return last();		
+		return SWC.getLastMinute();		
 	}
 	
-	@GET(SlidingWindowCounter.version+"/numLastHour")
+	@GET(SWC.version+"/numLastHour")
 	@PermitAll 	
 	public Long numLastHour() {
-		return last();
+		return SWC.getLastHour();
 	}
-
+	
+	@GET(SWC.version+"/count")	
+	@PermitAll 	
+	public String count() {
+		JSONObject jo=new JSONObject();
+		jo.put("LastHour", numLastHour());
+		jo.put("LastMinute", numLastMinute());
+		jo.put("LastSecond", numLastSecond());
+		return jo.toString(2);
+	}
+	
+	
 }

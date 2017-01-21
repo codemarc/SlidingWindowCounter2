@@ -12,7 +12,7 @@ EXPOSE 8080
 # Add the web app and jetty runner
 WORKDIR /swc2
 COPY jetty-runner.jar .
-COPY swc2.war .
+COPY target/swc2-1.0.war .
 COPY swc2.sh .
 
 CMD "./swc2.sh"

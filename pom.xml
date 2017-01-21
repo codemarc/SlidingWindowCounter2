@@ -6,7 +6,7 @@
 
     <groupId>net.codemarc</groupId>
     <artifactId>swc2</artifactId>
-    <version>0.1-SNAPSHOT</version>
+    <version>1.0</version>
     <packaging>war</packaging>
     <name>swc2</name>
 
