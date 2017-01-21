@@ -51,12 +51,12 @@ mvn eclipse:clean       | remove eclipse project files
 I am using [restx](http://restx.io) as a framework to host a webapp and a rest based api that 
 exposes the sliding window counter functionality. The framework allows me to document 
 my api and provide a quick way to test it. Once you have a running version of the app you can 
-[Login to the LOCAL RESTX Admin console](http://localhost:8080/api/@/ui/api-docs/#/?groups=default) 
+[Login to the LOCAL RESTX Admin console](http://localhost:8080/api/@/ui/api-docs/) 
 using the credentials _admin_ / _codemarc_. From the console you can test the various api calls. 
 
 ### Try it
 For your convenience I am hosting a container based 
-version of this app on my site. [Login to the RESTX Admin console](http://localhost:8080/api/@/ui/api-docs/#/?groups=default) 
+version of this app on my site. [Login to the RESTX Admin console](http://codemarc.net:8080/api/@/ui/api-docs/)  
 or simply the my api endpoints: [http://codemarc.net:8080/api](http://codemarc.net:8080/api)
 
 * [http://codemarc.net:8080/api/v1/increment](http://codemarc.net:8080/api/v1/increment)
