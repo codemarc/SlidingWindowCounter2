@@ -61,7 +61,7 @@ or simply the my api endpoints: [http://codemarc.net:8080/api](http://codemarc.n
 
 * [http://codemarc.net:8080/api/v1/increment](http://codemarc.net:8080/api/v1/increment)
 * [http://codemarc.net:8080/api/v1/numLastSec](http://codemarc.net:8080/api/v1/numLastSec)
-* [http://codemarc.net:8080/api/v1/numLastSec](http://codemarc.net:8080/api/v1/numLastSec)
+* [http://codemarc.net:8080/api/v1/numLastMinute](http://codemarc.net:8080/api/v1/numLastMinute)
 * [http://codemarc.net:8080/api/v1/numLastHour](http://codemarc.net:8080/api/v1/numLastHour)
 * [http://codemarc.net:8080/api/v1/count](http://codemarc.net:8080/api/v1/count)
 
