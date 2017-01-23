@@ -105,10 +105,10 @@ $ curl -X GET http://localhost:8080/api/v1/count
 ```
 
 ### Apache Bench
-I ofter use Apache Bench to do some simple benchmarking.
+I often use [Apache Bench](https://httpd.apache.org/docs/2.4/programs/ab.html) to do some simple benchmarking.
 The snippet below runs apache bench, 1000 HTTP requests, 10 at a time.  
 
-> I recycle my server before I run this type of test
+> I usually recycle my server before I run this type of test
 
 ``` code
 $ curl -X GET http://localhost:8080/api/v1/count && \
