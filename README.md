@@ -55,9 +55,9 @@ my api and provide a quick way to test it. Once you have a running version of th
 using the credentials _admin_ / _codemarc_. From the console you can test the various api calls. 
 
 ### Try it
-For your convenience I am hosting a container based 
-version of this app on my site. [Login to the RESTX Admin console](http://codemarc.net:8080/api/@/ui/api-docs/)  
-or simply the my api endpoints: [http://codemarc.net:8080/api](http://codemarc.net:8080/api)
+For your convenience I am hosting a container based version of this app on my site.  
+[Login to the RESTX Admin console](http://codemarc.net:8080/api/@/ui/api-docs/)  
+or simply hit my api endpoints: [http://codemarc.net:8080/api](http://codemarc.net:8080/api)
 
 * [http://codemarc.net:8080/api/v1/increment](http://codemarc.net:8080/api/v1/increment)
 * [http://codemarc.net:8080/api/v1/numLastSecond](http://codemarc.net:8080/api/v1/numLastSecond)
